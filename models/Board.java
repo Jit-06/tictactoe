@@ -32,6 +32,11 @@ public class Board {
         }
     }
 
+    public Board(Board board){
+        this.size=board.size;
+        this.board=board.board;
+    }
+
     public int getSize() {
         return size;
     }

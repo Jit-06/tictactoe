@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Game {
     private Board currentBoard;
+    private int dimensions;
     private List<Player> players;
     private Player currentPlayer;
     private GameStatus gameStatus;
@@ -21,6 +22,7 @@ public class Game {
     private List<Move> moves;
     private List<Board> boardSates;
     private WinningStrategy winningStrategy;
+    private int numberOfSymbols;
 
     public static Builder builder(){
         return new Builder();
@@ -33,8 +35,91 @@ public class Game {
         this.gameStatus = GameStatus.IN_PROGRESS;
         this.moves = new ArrayList<Move>();
         this.boardSates = new ArrayList<Board>();
-
+        this.numberOfSymbols=0;
     }
+
+
+    public int getNumberOfSymbols() {
+        return numberOfSymbols;
+    }
+
+    public void setNumberOfSymbols(int numberOfSymbols) {
+        this.numberOfSymbols = numberOfSymbols;
+    }
+
+    public Board getCurrentBoard() {
+        return currentBoard;
+    }
+
+    public void setCurrentBoard(Board currentBoard) {
+        this.currentBoard = currentBoard;
+    }
+
+    public int getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(int dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
+    }
+
+    public void setGameStatus(GameStatus gameStatus) {
+        this.gameStatus = gameStatus;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
+
+    public List<Move> getMoves() {
+        return moves;
+    }
+
+    public void setMoves(List<Move> moves) {
+        this.moves = moves;
+    }
+
+    public List<Board> getBoardSates() {
+        return boardSates;
+    }
+
+    public void setBoardSates(List<Board> boardSates) {
+        this.boardSates = boardSates;
+    }
+
+    public WinningStrategy getWinningStrategy() {
+        return winningStrategy;
+    }
+
+    public void setWinningStrategy(WinningStrategy winningStrategy) {
+        this.winningStrategy = winningStrategy;
+    }
+
+
 
     public static class Builder{
        // private Board currentBoard;
@@ -42,7 +127,7 @@ public class Game {
         private List<Player> players;
         private WinningStrategy winningStrategy;
 
-        public Builder currentBoard(int dimensions) {
+        public Builder dimensions(int dimensions) {
             this.dimensions = dimensions;
             return this;
         }

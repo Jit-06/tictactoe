@@ -2,7 +2,7 @@ package botplayingstrategy;
 
 public class BotPlayingStrategyFactory {
 
-    public BotPlayingStrategy getBotPlayingStrategy(){
+    public static BotPlayingStrategy getBotPlayingStrategy(){
         return new RandomBotPlayingStrategy();
     }
 }
